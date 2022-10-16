@@ -14,7 +14,21 @@ namespace test
             List<PInfo> foundPerson = new List<PInfo>();
             foreach (PInfo info in infos)
             {
-                if (info.Name == name)
+                if (info.Name.ToLower() == name.ToLower())
+                {
+                    foundPerson.Add(info);
+                }
+            }
+            return foundPerson;
+        }
+        
+        public static List<PInfo> SearchPerson(List<PInfo>  infos, bool gender)
+        {
+            //Это список найденных персонажей
+            List<PInfo> foundPerson = new List<PInfo>();
+            foreach (PInfo info in infos)
+            {
+                if (info.Gender == gender)
                 {
                     foundPerson.Add(info);
                 }

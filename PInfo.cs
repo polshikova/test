@@ -14,14 +14,16 @@ namespace test
 
         public PInfo()
         {
+            Console.Write("Введите имя: ");
             Name = Console.ReadLine();
-            Gender = Console.ReadLine() == "1" ? true : false;
+            Console.Write("Введите пол: ");
+            Gender = Console.ReadLine() == "1";
 
         }
 
         public void PrintInfo()
         {
-            Console.WriteLine(Name + "\n" + (Gender == true ? "Male" : "Female"));
+            Console.WriteLine(Name + "\n" + (Gender ? "Male" : "Female"));
         }
     }
 }
